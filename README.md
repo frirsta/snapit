@@ -9,7 +9,10 @@ npm install --save react-infinite-scroll-component
 npm install react-bootstrap bootstrap
 
 
-sources
+# Sources
+<details><summary>Sources</summary>
+
+
 
 https://html-css-js.com/css/generator/box-shadow/
 
@@ -30,3 +33,4 @@ Video av <a href="https://pixabay.com/sv/users/felixmittermeier-4397258/?utm_sou
 
 Images
 <a href="https://www.freepik.com/free-photo/beautiful-tree-middle-field-covered-with-grass-with-tree-line-background_13005861.htm#query=nature&position=2&from_view=search&track=sph">Image by wirestock</a> on Freepik
+</details>

@@ -7,7 +7,7 @@ import Avatar from "@mui/joy/Avatar";
 import styles from "../../styles/AddComment.module.css";
 
 const AddComment = (props) => {
-  const { post, setPost, setComments, profile_image, profile_id } = props;
+  const { post, setPost, setComments, profile_image } = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
@@ -52,7 +52,12 @@ const AddComment = (props) => {
         placeholder="Add a comment…"
         sx={{ flexGrow: 1, mr: 1, "--Input-focusedThickness": "0px" }}
       />
-      <Button type="submit" variant="plain" disabled={!content.trim()}>
+      <Button
+        type="submit"
+        variant="plain"
+        color="neutral"
+        disabled={!content.trim()}
+      >
         Post
       </Button>
     </Form>

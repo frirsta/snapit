@@ -12,7 +12,6 @@
 }
 .Content {
   margin-left: 15px;
-  height: 77px;
   width: 77px;
   display: flex;
   flex-direction: column;
@@ -41,6 +40,7 @@
 .Buttons {
   display: flex;
   flex-direction: row;
+  padding-top: 10px;
 }
 
 .Menu {
@@ -54,7 +54,8 @@
   color: unset;
 }
 .Bio {
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
   max-width: 500px;
   font-size: 12px !important;
 }
@@ -65,9 +66,8 @@
 @media screen and (min-width: 600px) {
   .Content {
     flex-direction: row;
-    justify-content: flex-start;
     align-items: baseline;
-    width: 100%;
+    height: unset;
   }
   .Name {
     margin: 5px !important;

@@ -61,53 +61,59 @@ export default function BioCard({ posts, liked_posts, saved_posts }) {
             }}
           >
             <Avatar src={account?.profile_image} className={styles.Avatar} />
-            <Box className={styles.Content}>
-              <Typography className={styles.Name} fontSize="lg" fontWeight="lg">
-                {account?.owner}
-              </Typography>
+            <Box className={styles.ContentContainer}>
+              <Box className={styles.Content}>
+                <Typography
+                  className={styles.Name}
+                  fontSize="lg"
+                  fontWeight="lg"
+                >
+                  {account?.owner}
+                </Typography>
 
-              <CardActions buttonFlex="1">
-                {currentUser &&
-                  !is_owner &&
-                  (account?.following_id ? (
-                    <Button
-                      className={`${styles.Button} ${styles.Unfollow}`}
-                      onClick={() => handleUnfollow(account)}
-                    >
-                      unfollow
-                    </Button>
-                  ) : (
-                    <Button
-                      className={`${styles.Button} ${styles.Follow}`}
-                      onClick={() => handleFollow(account)}
-                    >
-                      follow
-                    </Button>
-                  ))}
-                {currentUser && is_owner && (
-                  <Box className={styles.Buttons}>
-                    <Button
-                      component={Link}
-                      to={`/profile/edit/${id}`}
-                      className={`${styles.Button}`}
-                    >
-                      Edit profile
-                    </Button>{" "}
-                    <Button
-                      component={Link}
-                      to={`/profile/edit/${id}`}
-                      className={`${styles.Button}`}
-                    >
-                      Edit bio
-                    </Button>
-                  </Box>
-                )}
-              </CardActions>
+                <CardActions buttonFlex="1">
+                  {currentUser &&
+                    !is_owner &&
+                    (account?.following_id ? (
+                      <Button
+                        className={`${styles.Button} ${styles.Unfollow}`}
+                        onClick={() => handleUnfollow(account)}
+                      >
+                        unfollow
+                      </Button>
+                    ) : (
+                      <Button
+                        className={`${styles.Button} ${styles.Follow}`}
+                        onClick={() => handleFollow(account)}
+                      >
+                        follow
+                      </Button>
+                    ))}
+                  {currentUser && is_owner && (
+                    <Box className={styles.Buttons}>
+                      <Button
+                        component={Link}
+                        to={`/profile/edit/${id}`}
+                        className={`${styles.Button}`}
+                      >
+                        Edit profile
+                      </Button>{" "}
+                      <Button
+                        component={Link}
+                        to={`/profile/edit/${id}`}
+                        className={`${styles.Button}`}
+                      >
+                        Edit bio
+                      </Button>
+                    </Box>
+                  )}
+                </CardActions>
+              </Box>
+              <Typography className={styles.Bio} level="body2">
+                {account?.bio}
+              </Typography>
             </Box>
           </CardContent>
-          <Typography className={styles.Bio} level="body2">
-            {account?.bio}
-          </Typography>
         </Box>
         <Divider variant="middle" />
         <Sheet

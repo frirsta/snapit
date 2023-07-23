@@ -1,12 +1,56 @@
-npm install react-router-dom
-npm install axios
-npm install @mui/joy @emotion/react @emotion/styled
-npm install @mui/material @emotion/react @emotion/styled
-npm install @mui/material @mui/styled-engine-sc styled-components
-npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
-npm install jwt-decode
-npm install --save react-infinite-scroll-component
-npm install react-bootstrap bootstrap
+# Snapit - Social Media Platform
+
+Welcome to Snapit! This is a social media platform built using React.js and several other libraries, allowing users to connect with others, share posts, and interact with the community. 
+
+# Table of Contents
+
+- [**Features**](#features)
+- [**Technologies Used**](#technologies-used)
+- [**Getting started**](#Getting-started)
+- [**Sources**](#Sources)
+
+
+# Features
+
+1. Sign Up / Sign In: Users can create an account or sign in to an existing account using their username and password.
+
+2. Add Posts: Authenticated users can create new posts and share their thoughts and images with the community.
+
+3. Edit Post: Users have the option to edit their own posts and update the content.
+
+4. Comment Post: Users can comment on posts made by other users, promoting engagement and discussions within the community.
+
+5. Delete Comments: Users can delete their own comments on any post.
+
+6. Like Post: Users can like posts that they find interesting.
+
+7. Save Post: Users can save posts they want to revisit later.
+
+8. Follow Other Users: Users can follow other users.
+
+9. Profile Page: Each user has a dedicated profile page that showcases their profile image, bio, and various statistics:
+
+* Total number of followers
+* Total number of users they are following
+* Total number of posts added by the user
+
+10. My Posts: Users can access a section on their profile page to find all the posts they have created.
+
+11. Saved Posts: Users can access a section on their profile page to find all the posts they have saved.
+
+12. Liked Posts: Users can access a section on their profile page to find all the posts they have liked.
+
+# Technologies Used
+
+* React.js
+* React Router DOM
+* Axios
+* Material-UI (MUI)
+* JWT Decode
+* react-infinite-scroll-component
+* React Bootstrap
+
+
 
 
 # Sources

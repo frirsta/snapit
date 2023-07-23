@@ -2,6 +2,7 @@
   width: 32px !important;
   height: 32px !important;
 }
+
 @media screen and (max-width: 600px) {
   .Form {
     display: flex;

@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-.App {
-  min-height: 100vh;
-  font-family: "Quicksand", sans-serif;
-  padding-bottom: 100px;
+.AppContainer{
   background: #d9a7c7; 
   background: -webkit-linear-gradient(
     to right,
@@ -14,6 +11,12 @@
     #fffcdc,
     #d9a7c7
   ); 
+}
+.App {
+  min-height: 100vh;
+  font-family: "Quicksand", sans-serif;
+  padding-bottom: 100px;
+  
 }
 @media screen and (min-width: 600px) {
   .App {

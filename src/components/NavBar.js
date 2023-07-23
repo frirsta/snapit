@@ -91,111 +91,116 @@ const NavBar = () => {
     ...theme.mixins.toolbar,
   }));
   const iconNavigation = (
-    <>
-      <Drawer variant="permanent">
-        <DrawerHeader>
-          <div className={styles.Brand}></div>
-        </DrawerHeader>
-        <Divider />
-        <Box
-          className={styles.List}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            height: "100vh",
-          }}
-        >
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton
+    <Drawer
+      sx={{
+        "& .MuiDrawer-paper": {
+          backgroundColor: "transparent",
+        },
+      }}
+      variant="permanent"
+    >
+      <DrawerHeader>
+        <div className={styles.Brand}></div>
+      </DrawerHeader>
+      <Divider />
+      <Box
+        className={styles.List}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          height: "100vh",
+        }}
+      >
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                px: 2.5,
+              }}
+              component={Link}
+              to={`/`}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  px: 2.5,
+                  minWidth: 0,
+                  justifyContent: "center",
                 }}
-                component={Link}
-                to={`/`}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    justifyContent: "center",
-                  }}
-                >
-                  <HomeIcon className={styles.DrawerIcon} />
-                </ListItemIcon>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton
+                <HomeIcon className={styles.DrawerIcon} />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                px: 2.5,
+              }}
+              component={Link}
+              to={"/addpost"}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  px: 2.5,
+                  minWidth: 0,
+                  justifyContent: "center",
                 }}
-                component={Link}
-                to={"/addpost"}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    justifyContent: "center",
-                  }}
-                >
-                  <AddBoxOutlinedIcon className={styles.DrawerIcon} />
-                </ListItemIcon>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton
+                <AddBoxOutlinedIcon className={styles.DrawerIcon} />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                px: 2.5,
+              }}
+              component={Link}
+              to={`/profile/${currentUser?.profile_id}`}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  px: 2.5,
+                  minWidth: 0,
+                  justifyContent: "center",
                 }}
-                component={Link}
-                to={`/profile/${currentUser?.profile_id}`}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    justifyContent: "center",
-                  }}
-                >
-                  <Avatar
-                    className={styles.DrawerIcon}
-                    alt="user profile"
-                    src={currentUser?.profile_image}
-                  />
-                </ListItemIcon>
-              </ListItemButton>
-            </ListItem>
-          </List>
-          <List>
-            <Divider />
-            <ListItem disablePadding>
-              <ListItemButton
+                <Avatar
+                  className={styles.DrawerIcon}
+                  alt="user profile"
+                  src={currentUser?.profile_image}
+                />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <List>
+          <Divider />
+          <ListItem disablePadding>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                px: 2.5,
+              }}
+              onClick={handleSignOut}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  px: 2.5,
+                  minWidth: 0,
+                  justifyContent: "center",
                 }}
-                onClick={handleSignOut}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    justifyContent: "center",
-                  }}
-                >
-                  <LogoutIcon className={styles.DrawerIcon} />
-                </ListItemIcon>
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
-    </>
+                <LogoutIcon className={styles.DrawerIcon} />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Box>
+    </Drawer>
   );
   const drawer = (
-    <div className={styles.DrawerList}>
+    <div>
       <DrawerHeader className={styles.BrandContainer}>
         <div className={styles.Brand}></div>
         <div className={styles.BrandName}>Snapit</div>
@@ -252,7 +257,7 @@ const NavBar = () => {
   return (
     <>
       {menu && (
-        <Box className={styles.Navbar}>
+        <Box>
           <Box
             component="nav"
             sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
@@ -271,6 +276,7 @@ const NavBar = () => {
                 "& .MuiDrawer-paper": {
                   boxSizing: "border-box",
                   width: drawerWidth,
+                  backgroundColor: "transparent",
                 },
               }}
               open
@@ -278,7 +284,11 @@ const NavBar = () => {
               {drawer}
             </Drawer>
           </Box>
-          <Box sx={{ display: { xs: "none", sm: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex", md: "none" },
+            }}
+          >
             {iconNavigation}
           </Box>
         </Box>

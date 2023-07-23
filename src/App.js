@@ -12,7 +12,7 @@ import EditProfile from "./pages/profile/EditProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
-    <div>
+    <div className={styles.AppContainer}>
       <div className={styles.App}>
         <NavBar />
         <Routes>

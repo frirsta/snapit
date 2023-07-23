@@ -1,0 +1,21 @@
+.EditPost {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.Form {
+  width: 80vw;
+  max-width: 400px;
+  margin: auto;
+}
+.Button {
+  margin-top: 20px !important;
+}
+.GoBack {
+  position: absolute !important;
+  z-index: 10;
+  left: 10px;
+  top: 10px;
+}

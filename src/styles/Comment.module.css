@@ -1,0 +1,43 @@
+.CommentContainer {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.Comment {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.Avatar {
+  margin-right: 10px;
+  width: 30px !important;
+  height: 30px !important;
+}
+.ContentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.CommentOwner {
+  display: flex;
+  flex-direction: column;
+}
+
+.Content {
+  font-size: 12px;
+}
+.Owner {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 12px;
+}
+.Time {
+  font-size: 12px;
+}
+.Menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

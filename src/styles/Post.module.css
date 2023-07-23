@@ -1,0 +1,14 @@
+.Link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #25252d;
+}
+
+.Post {
+  margin: 30px auto;
+  width: 80vw;
+  max-width: 450px;
+}
+
+@media only screen and (min-width: 600px) {
+}

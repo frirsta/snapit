@@ -1,0 +1,82 @@
+.ProfileInformation {
+  text-align: center;
+}
+.CardContent {
+  margin: 0 auto;
+  justify-content: flex-start;
+  padding: 15px !important;
+}
+.Avatar {
+  height: 77px !important;
+  width: 77px !important;
+}
+.Content {
+  margin-left: 15px;
+  height: 77px;
+  width: 77px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-transform: capitalize;
+}
+.Button {
+  text-transform: capitalize;
+  padding: 0px 10px !important;
+  min-height: 30px !important;
+  min-width: 100px;
+  background-color: #363636 !important;
+  margin: 0 2px !important;
+}
+
+.Unfollow {
+  color: #fff !important;
+}
+.Follow {
+  background-color: #096bde;
+}
+.Sheet {
+  background-color: transparent;
+}
+.Buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.Menu {
+  position: absolute;
+  z-index: 10000;
+  right: 15px;
+  top: 15px;
+}
+.MenuLink {
+  text-decoration: none;
+  color: unset;
+}
+.Bio {
+  padding: 20px;
+  max-width: 500px;
+  font-size: 12px !important;
+}
+.NoPosts {
+  text-align: center;
+  margin-top: 20px;
+}
+@media screen and (min-width: 600px) {
+  .Content {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 100%;
+  }
+  .Name {
+    margin: 5px !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .Avatar {
+    height: 150px !important;
+    width: 150px !important;
+  }
+}

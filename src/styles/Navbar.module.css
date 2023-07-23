@@ -1,0 +1,68 @@
+.DrawerIcon {
+  width: 32px !important;
+  height: 32px !important;
+}
+@media screen and (max-width: 600px) {
+  .Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Box {
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
+.Image {
+  object-fit: cover !important;
+}
+
+.UploadImage {
+  background: url("../assets/addImage.png") no-repeat center center;
+  height: 100px;
+  width: 100px;
+}
+.Modal {
+  width: 80vw;
+  height: 400px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 899px) {
+  .BottomNavigation {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
+  }
+  .Brand {
+    background: url("../assets/brand32.png") no-repeat center center;
+    height: 32px;
+    width: 32px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 900px) {
+  .BrandContainer {
+    justify-content: flex-start !important;
+    padding: 0 16px !important;
+  }
+  .Brand {
+    background: url("../assets/brand32.png") no-repeat center center;
+    height: 32px;
+    width: 32px;
+    margin-right: 22px;
+  }
+  .BrandName {
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .List {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+  }
+}

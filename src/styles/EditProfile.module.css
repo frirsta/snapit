@@ -1,0 +1,25 @@
+.Form {
+  padding: 15px;
+}
+.AddProfileImage {
+  cursor: pointer;
+  color: #0a6bdf;
+  font-weight: bold;
+  transition: all ease 0.4s;
+}
+.AddProfileImage:hover {
+  color: gray;
+}
+.ProfileImage {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+.Avatar {
+  width: 77px !important;
+  height: 77px !important;
+  margin-right: 15px;
+}
+.Button {
+  margin: 10px !important;
+}

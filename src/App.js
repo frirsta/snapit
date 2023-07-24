@@ -9,7 +9,9 @@ import PostList from "./pages/posts/PostList";
 import PostDetail from "./pages/posts/PostDetail";
 import PostEdit from "./pages/posts/PostEdit";
 import EditProfile from "./pages/profile/EditProfile";
+import NotFound from "./components/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <div className={styles.AppContainer}>
@@ -24,6 +26,7 @@ function App() {
           <Route path="/addpost" element={<AddPost />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>

@@ -35,7 +35,7 @@ const NavBar = () => {
       removeTokenTimestamp();
       navigate("/signin");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

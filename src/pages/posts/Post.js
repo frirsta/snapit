@@ -63,7 +63,7 @@ export default function InstagramPost(props) {
       await axiosResponse.delete(`/posts/${id}`);
       navigate(`/profile/${profile_id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -79,7 +79,7 @@ export default function InstagramPost(props) {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -95,7 +95,7 @@ export default function InstagramPost(props) {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
   const handleFavorite = async () => {
@@ -114,7 +114,7 @@ export default function InstagramPost(props) {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -134,7 +134,7 @@ export default function InstagramPost(props) {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

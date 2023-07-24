@@ -22,7 +22,6 @@ const Profile = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  console.log(currentUser);
   return (
     <Box>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>

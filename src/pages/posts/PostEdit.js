@@ -4,7 +4,7 @@ import { axiosRequest } from "../../axios";
 import Form from "react-bootstrap/Form";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
-import Alert from "@mui/joy/Alert";
+import Alert from "@mui/material/Alert";
 import Button from "@mui/joy/Button";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Textarea from "@mui/joy/Textarea";
@@ -33,7 +33,7 @@ const PostEdit = () => {
 
         is_owner ? setData({ caption, post_image }) : navigate(`/`);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         navigate(`/`);
       }
     };
@@ -62,7 +62,7 @@ const PostEdit = () => {
       await axiosRequest.put(`/posts/${id}`, formData);
       navigate(`/post/${id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -110,7 +110,7 @@ const PostEdit = () => {
             />
           </Form.Group>
           {errors.caption?.map((message, idx) => (
-            <Alert key={idx} severity="error">
+            <Alert key={idx} severity="warning">
               {message}
             </Alert>
           ))}

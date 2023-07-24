@@ -49,7 +49,6 @@ const SignIn = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-  console.log(errors);
   return (
     <Box className={styles.SignInContainer}>
       <Box className={`${styles.Background} ${styles.SignInBackground}`}></Box>

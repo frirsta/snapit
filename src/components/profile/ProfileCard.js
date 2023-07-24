@@ -37,7 +37,7 @@ export default function BioCard({ posts }) {
           profilePage: { results: [data] },
         }));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     fetchData();

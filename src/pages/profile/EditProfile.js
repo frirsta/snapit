@@ -24,12 +24,16 @@ const EditProfile = () => {
   const { bio, profile_image } = accountData;
   useEffect(() => {
     const handleMount = async () => {
-      try {
-        const { data } = await axiosRequest.get(`/profile/${id}`);
-        const { bio, profile_image } = data;
-        setAccountData({ bio, profile_image });
-      } catch (err) {
-        navigate(-1);
+      if (currentUser?.profile_id?.toString() === id) {
+        try {
+          const { data } = await axiosRequest.get(`/profile/${id}`);
+          const { bio, profile_image } = data;
+          setAccountData({ bio, profile_image });
+        } catch (err) {
+          navigate(-1);
+        }
+      } else {
+        navigate("/");
       }
     };
     handleMount();
@@ -42,7 +46,6 @@ const EditProfile = () => {
     });
   };
 
-  console.log(accountData);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -59,7 +62,7 @@ const EditProfile = () => {
       }));
       navigate(-1);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };

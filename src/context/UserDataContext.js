@@ -37,7 +37,7 @@ export const UserDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -60,7 +60,7 @@ export const UserDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -75,7 +75,7 @@ export const UserDataProvider = ({ children }) => {
           exploreAccounts: data,
         }));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     handleData();

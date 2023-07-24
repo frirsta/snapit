@@ -23,7 +23,7 @@ const SavedPosts = () => {
         setSavedPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     fetchSavedPosts();

@@ -60,6 +60,18 @@ const AddPost = () => {
   return (
     <Box className={styles.AddPost}>
       <h2>Add Post</h2>
+      <Box sx={{ paddingBottom: "10px" }}>
+        {errors.post_image?.map((message, idx) => (
+          <Alert
+            sx={{ padding: "2px", maxWidth: "80vw" }}
+            key={idx}
+            severity="error"
+          >
+            {message}
+          </Alert>
+        ))}
+      </Box>
+
       <form className={styles.Form} onSubmit={handleSubmit}>
         <Grid className={styles.FormContainer} container>
           <Grid className={styles.AddImageContainer} item xs={12}>
@@ -91,11 +103,6 @@ const AddPost = () => {
                 hidden
               />
             </Form.Group>
-            {errors.post_image?.map((message, idx) => (
-              <Alert key={idx} severity="error">
-                {message}
-              </Alert>
-            ))}
           </Grid>
           <Box
             className={styles.CaptionContainer}
@@ -116,11 +123,17 @@ const AddPost = () => {
                   value={caption}
                 />
               </Form.Group>
-              {errors.caption?.map((message, idx) => (
-                <Alert key={idx} severity="error">
-                  {message}
-                </Alert>
-              ))}
+              <Box>
+                {errors.caption?.map((message, idx) => (
+                  <Alert
+                    sx={{ padding: "2px", maxWidth: "80vw", marginTop: "10px" }}
+                    key={idx}
+                    severity="error"
+                  >
+                    {message}
+                  </Alert>
+                ))}
+              </Box>
             </Grid>
             {post_image && (
               <>

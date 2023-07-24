@@ -13,6 +13,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import styles from "../styles/Signup.module.css";
 import Alert from "@mui/material/Alert";
+import Box from "@mui/joy/Box";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -46,14 +47,14 @@ const SignUp = () => {
   };
 
   return (
-    <div className={styles.SignInContainer}>
-      <div className={`${styles.Background} ${styles.SignUpBackground}`}></div>
-      <div className={styles.SignIn}>
+    <Box className={styles.SignInContainer}>
+      <Box className={`${styles.Background} ${styles.SignUpBackground}`}></Box>
+      <Box className={styles.SignIn}>
         <h2 className={styles.Title}>
           Welcome to Snap it <br></br>
           Sign up to continue
         </h2>
-        <div className={styles.FormContainer}>
+        <Box className={styles.FormContainer}>
           <form onSubmit={handleSubmit} className={styles.Form}>
             <Grid className={styles.Container} container>
               <Grid item>
@@ -147,17 +148,17 @@ const SignUp = () => {
               </Button>
             </Grid>
           </form>
-        </div>
-        <div className={styles.HaveAccount}>
+        </Box>
+        <Box className={styles.HaveAccount}>
           <span>
             Already have an account? <br></br>
             <Link className={styles.Link} to="/signin">
               Sign in
             </Link>
           </span>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

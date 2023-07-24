@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import styles from "../styles/Signup.module.css";
 import Alert from "@mui/material/Alert";
+import Box from "@mui/joy/Box";
 
 const SignIn = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -48,17 +49,33 @@ const SignIn = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
-  console.log(signin);
+  console.log(errors);
   return (
-    <div className={styles.SignInContainer}>
-      <div className={`${styles.Background} ${styles.SignInBackground}`}></div>
-      <div className={styles.SignIn}>
+    <Box className={styles.SignInContainer}>
+      <Box className={`${styles.Background} ${styles.SignInBackground}`}></Box>
+
+      <Box className={styles.SignIn}>
+        <Box>
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert
+              sx={{
+                padding: "2px",
+                maxWidth: "80vw",
+                position: "absolute",
+                top: 50,
+              }}
+              key={idx}
+              severity="error"
+            >
+              {message}
+            </Alert>
+          ))}
+        </Box>
         <h2 className={styles.Title}>
           Welcome to Snap it <br></br>
           Sign in to continue
         </h2>
-        <div className={styles.Account}>
+        <Box className={styles.Account}>
           <span>
             Don't have an account?{" "}
             <Link className={styles.Link} to="/signup">
@@ -66,8 +83,8 @@ const SignIn = () => {
             </Link>
           </span>
           <span>It takes less than a minute.</span>
-        </div>
-        <div className={styles.FormContainer}>
+        </Box>
+        <Box className={styles.FormContainer}>
           <form onSubmit={handleSubmit} className={styles.Form}>
             <Grid className={styles.Container} container>
               <Grid item>
@@ -130,9 +147,9 @@ const SignIn = () => {
               </Button>
             </Grid>
           </form>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

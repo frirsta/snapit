@@ -17,8 +17,10 @@ import Tabs from "@mui/joy/Tabs";
 import TabList from "@mui/joy/TabList";
 import Tab from "@mui/joy/Tab";
 import TabPanel from "@mui/joy/TabPanel";
+import SavedPosts from "./SavedPosts";
+import LikedPosts from "./LikedPosts";
 
-export default function BioCard({ posts, liked_posts, saved_posts }) {
+export default function BioCard({ posts }) {
   const { setUserData, handleFollow, handleUnfollow } = useSetUserData();
   const { profilePage } = useUserData();
   const currentUser = useCurrentUser();
@@ -159,8 +161,12 @@ export default function BioCard({ posts, liked_posts, saved_posts }) {
             </TabList>
             <TabPanel value={0}>{posts}</TabPanel>
 
-            <TabPanel value={1}>{liked_posts}</TabPanel>
-            <TabPanel value={2}>{saved_posts}</TabPanel>
+            <TabPanel value={1}>
+              <LikedPosts />
+            </TabPanel>
+            <TabPanel value={2}>
+              <SavedPosts />
+            </TabPanel>
           </Tabs>
         ) : (
           posts

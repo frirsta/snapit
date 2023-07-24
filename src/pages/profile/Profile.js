@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import { axiosRequest } from "../../axios";
 import ProfileCard from "../../components/profile/ProfileCard";
 import Post from "../posts/Post";
-import CircularProgress from "@mui/joy/CircularProgress";
-import LinearProgress from "@mui/joy/LinearProgress";
+import LinearProgress from "@mui/material/LinearProgress";
+import CircularProgress from "@mui/material/CircularProgress";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
@@ -29,13 +29,13 @@ const Profile = () => {
   }, [id]);
 
   return (
-    <div>
+    <Box>
       <ProfileCard
         posts={
           <>
             {hasLoaded ? (
               <>
-                <div>
+                <Box>
                   {accountPosts?.results?.length ? (
                     <InfiniteScroll
                       children={accountPosts?.results?.map((post) => (
@@ -55,15 +55,17 @@ const Profile = () => {
                       <Typography level="body1">No posts yet</Typography>
                     </Box>
                   )}
-                </div>
+                </Box>
               </>
             ) : (
-              <CircularProgress color="secondary" />
+              <Box sx={{ textAlign: "center" }}>
+                <CircularProgress color="secondary" />
+              </Box>
             )}
           </>
         }
       />
-    </div>
+    </Box>
   );
 };
 

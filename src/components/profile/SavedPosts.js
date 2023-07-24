@@ -29,11 +29,11 @@ const SavedPosts = () => {
     fetchSavedPosts();
   }, [id]);
   return (
-    <div>
+    <Box>
       <>
         {hasLoaded ? (
           <>
-            <div>
+            <Box>
               {savedPosts?.results?.length ? (
                 <InfiniteScroll
                   children={savedPosts?.results?.map((post) => (
@@ -49,13 +49,15 @@ const SavedPosts = () => {
                   <Typography level="body1">No saved posts</Typography>
                 </Box>
               )}
-            </div>
+            </Box>
           </>
         ) : (
-          <CircularProgress color="secondary" />
+          <Box sx={{ textAlign: "center" }}>
+            <CircularProgress color="secondary" />
+          </Box>
         )}
       </>
-    </div>
+    </Box>
   );
 };
 

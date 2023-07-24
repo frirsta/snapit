@@ -30,11 +30,11 @@ const LikedPosts = () => {
     fetchLikedPosts();
   }, [id]);
   return (
-    <div>
+    <Box>
       <>
         {hasLoaded ? (
           <>
-            <div>
+            <Box>
               {likedPosts?.results?.length ? (
                 <InfiniteScroll
                   children={likedPosts?.results?.map((post) => (
@@ -50,13 +50,15 @@ const LikedPosts = () => {
                   <Typography level="body1">No liked posts</Typography>
                 </Box>
               )}
-            </div>
+            </Box>
           </>
         ) : (
-          <CircularProgress color="secondary" />
+          <Box sx={{ textAlign: "center" }}>
+            <CircularProgress color="secondary" />
+          </Box>
         )}
       </>
-    </div>
+    </Box>
   );
 };
 

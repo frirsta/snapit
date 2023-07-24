@@ -15,15 +15,59 @@ Live website - [Snapit](https://snapit-21abcde7984c.herokuapp.com/)
 - [**Getting started**](#Getting-started)
 - [**Sources**](#Sources)
 
+<br>
+
+<details><summary>Home page</summary>
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/home_desktop.png" alt="home page on desktop screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/home_tablet.png" alt="home page on tablet screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/home_mobile.png" alt="home page on mobile screen">
+</details>
+
+<br>
+
 # Features
 
 1. Sign Up / Sign In: Users can create an account or sign in to an existing account using their username and password.
 
+<br>
+
+<details><summary>Sign up page</summary>
+<img style="width: 40%; border-radius: 10px;" src="src/assets/readme/signup_desktop.png" alt="signup page on desktop screen">
+<img style="width: 40%; border-radius: 10px;" src="src/assets/readme/signup_mobile.png" alt="signup page on mobile screen">
+</details>
+
+<br>
+
+<details><summary>Sign in page</summary>
+<img style="width: 40%; border-radius: 10px;" src="src/assets/readme/signin_desktop.png" alt="signin page on desktop screen">
+<img style="width: 40%; border-radius: 10px;" src="src/assets/readme/signin_mobile.png" alt="signin page on mobile screen">
+</details>
+
+<br>
+
 2. Add Posts: Authenticated users can create new posts and share their thoughts and images with the community.
+
+<br>
+
+<details><summary>Add post page</summary>
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/addpost_desktop.png" alt="add post page on desktop screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/addpost_tablet.png" alt="add post page on tablet screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/addpost.png" alt="add post page on mobile screen">
+</details>
+
+<br>
 
 3. Edit Post: Users have the option to edit their own posts and update the content.
 
 4. Comment Post: Users can comment on posts made by other users, promoting engagement and discussions within the community.
+
+<br>
+
+<details><summary>Comments</summary>
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/comment.png" alt="comments">
+</details>
+
+<br>
 
 5. Delete Comments: Users can delete their own comments on any post.
 
@@ -32,12 +76,31 @@ Live website - [Snapit](https://snapit-21abcde7984c.herokuapp.com/)
 7. Save Post: Users can save posts they want to revisit later.
 
 8. Follow Other Users: Users can follow other users.
+   <br>
+
+<details><summary>Other user profile page</summary>
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/user_profile_desktop.png" alt="user profile page on desktop screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/user_profile_tablet.png" alt="user profile page on tablet screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/user_profile_mobile.png" alt="user profile page on mobile screen">
+</details>
+
+<br>
 
 9. Profile Page: Each user has a dedicated profile page that showcases their profile image, bio, and various statistics:
 
 - Total number of followers
 - Total number of users they are following
 - Total number of posts added by the user
+
+<br>
+
+<details><summary>Profile page</summary>
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/profile_desktop.png" alt="profile page on desktop screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/profile_tablet.png" alt="profile page on tablet screen">
+<img style="width: 25%; border-radius: 10px;" src="src/assets/readme/profile_mobile.png" alt="profile page on mobile screen">
+</details>
+
+<br>
 
 10. My Posts: Users can access a section on their profile page to find all the posts they have created.
 

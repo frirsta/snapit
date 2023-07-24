@@ -50,9 +50,9 @@ const Comment = (props) => {
     setOpen(false);
   };
   return (
-    <div className={styles.CommentContainer}>
-      <div className={styles.Comment}>
-        <div className={styles.ContentContainer}>
+    <Box className={styles.CommentContainer}>
+      <Box className={styles.Comment}>
+        <Box className={styles.ContentContainer}>
           <Link to={`/profile/${profile_id}`}>
             <Avatar className={styles.Avatar} src={profile_image} />
           </Link>
@@ -60,8 +60,8 @@ const Comment = (props) => {
             <span className={styles.Owner}>{owner}</span>
             <span className={styles.Content}>{content}</span>
           </Box>
-        </div>
-        <div className={styles.Menu}>
+        </Box>
+        <Box className={styles.Menu}>
           {is_owner && (
             <IconButton
               ref={buttonRef}
@@ -90,9 +90,9 @@ const Comment = (props) => {
             </IconButton>
           </Menu>
           <span className={styles.Time}>{updated_date}</span>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

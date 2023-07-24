@@ -9,6 +9,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Comment from "../../components/comments/Comment";
 import AddComment from "../../components/comments/AddComment";
 import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -35,7 +36,7 @@ const PostDetail = () => {
   }, [id]);
 
   return (
-    <div className={styles.PostDetail}>
+    <Box className={styles.PostDetail}>
       <Post
         {...post.results[0]}
         setPosts={setPost}
@@ -75,7 +76,7 @@ const PostDetail = () => {
           />
         }
       />
-    </div>
+    </Box>
   );
 };
 

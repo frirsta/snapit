@@ -11,6 +11,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import Form from "react-bootstrap/Form";
 import LinearProgress from "@mui/material/LinearProgress";
+import Box from "@mui/joy/Box";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -84,7 +85,7 @@ const PostList = () => {
     setQuery(event.target.value);
   };
   return (
-    <div className={styles.PostList}>
+    <Box className={styles.PostList}>
       <Form onSubmit={handleSearch}>
         <Search>
           <SearchIconWrapper>
@@ -101,7 +102,7 @@ const PostList = () => {
       </Form>
       {hasLoaded ? (
         <>
-          <div className={styles.PostsList}>
+          <Box className={styles.PostsList}>
             {posts?.results?.length ? (
               <InfiniteScroll
                 className={styles.InfiniteScroll}
@@ -114,16 +115,16 @@ const PostList = () => {
                 ))}
               />
             ) : (
-              <div>
+              <Box>
                 <p>Not found</p>
-              </div>
+              </Box>
             )}
-          </div>
+          </Box>
         </>
       ) : (
         <CircularProgress color="secondary" />
       )}
-    </div>
+    </Box>
   );
 };
 

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Box from "@mui/joy/Box";
 
 const NotFound = () => {
-  return (
-    <div>NotFound</div>
-  )
-}
+  return <Box>NotFound</Box>;
+};
 
-export default NotFound
+export default NotFound;

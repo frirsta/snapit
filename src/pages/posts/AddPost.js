@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { useCurrentUser } from "../../context/UserContext";
 import { axiosRequest } from "../../axios";
 import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
@@ -19,11 +18,10 @@ const AddPost = () => {
     post_image: "",
   });
 
+  const [loading, setLoading] = useState(false);
   const { caption, post_image } = postData;
   const imageInput = useRef(null);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const currentUser = useCurrentUser();
 
   const handleChange = (event) => {
     setPostData({
@@ -60,89 +58,86 @@ const AddPost = () => {
   };
 
   return (
-    <div>
-      {currentUser?.username}
-      <div className={styles.AddPost}>
-        <h2>Add Post</h2>
-        <form className={styles.Form} onSubmit={handleSubmit}>
-          <Grid className={styles.FormContainer} container>
-            <Grid className={styles.AddImageContainer} item xs={12}>
-              <Form.Group>
-                {post_image ? (
-                  <Box className={styles.AddPostBox}>
-                    <CardOverflow>
-                      <AspectRatio className={styles.AspectRatio} ratio="4/4">
-                        <img src={post_image} alt="current" />
-                        <Form.Label htmlFor="formId">
-                          <div className={styles.ChangeImage}></div>
-                        </Form.Label>
-                      </AspectRatio>
-                    </CardOverflow>
-                  </Box>
-                ) : (
-                  <Form.Label htmlFor="formId">
-                    <div className={styles.UploadImage}></div>
-                  </Form.Label>
-                )}
-                <Form.Control
-                  accept="image/*"
-                  ref={imageInput}
-                  type="file"
-                  id="formId"
-                  name="formId"
-                  onChange={handleImageChange}
-                  multiple
-                  hidden
+    <Box className={styles.AddPost}>
+      <h2>Add Post</h2>
+      <form className={styles.Form} onSubmit={handleSubmit}>
+        <Grid className={styles.FormContainer} container>
+          <Grid className={styles.AddImageContainer} item xs={12}>
+            <Form.Group>
+              {post_image ? (
+                <Box className={styles.AddPostBox}>
+                  <CardOverflow>
+                    <AspectRatio className={styles.AspectRatio} ratio="4/4">
+                      <img src={post_image} alt="current" />
+                      <Form.Label htmlFor="formId">
+                        <Box className={styles.ChangeImage}></Box>
+                      </Form.Label>
+                    </AspectRatio>
+                  </CardOverflow>
+                </Box>
+              ) : (
+                <Form.Label htmlFor="formId">
+                  <Box className={styles.UploadImage}></Box>
+                </Form.Label>
+              )}
+              <Form.Control
+                accept="image/*"
+                ref={imageInput}
+                type="file"
+                id="formId"
+                name="formId"
+                onChange={handleImageChange}
+                multiple
+                hidden
+              />
+            </Form.Group>
+            {errors.post_image?.map((message, idx) => (
+              <Alert key={idx} severity="error">
+                {message}
+              </Alert>
+            ))}
+          </Grid>
+          <Box
+            className={styles.CaptionContainer}
+            sx={{ display: "flex", flexDirection: "column" }}
+          >
+            <Grid item xs={12}>
+              <Form.Group className={styles.TextArea}>
+                <Form.Label htmlFor="caption">Caption</Form.Label>
+                <Textarea
+                  id="caption"
+                  color="info"
+                  minRows={2}
+                  size="lg"
+                  variant="plain"
+                  type="text"
+                  name="caption"
+                  onChange={handleChange}
+                  value={caption}
                 />
               </Form.Group>
-              {errors.post_image?.map((message, idx) => (
+              {errors.caption?.map((message, idx) => (
                 <Alert key={idx} severity="error">
                   {message}
                 </Alert>
               ))}
             </Grid>
-            <Box
-              className={styles.CaptionContainer}
-              sx={{ display: "flex", flexDirection: "column" }}
-            >
-              <Grid item xs={12}>
-                <Form.Group className={styles.TextArea}>
-                  <Form.Label htmlFor="caption">Caption</Form.Label>
-                  <Textarea
-                    id="caption"
-                    color="info"
-                    minRows={2}
-                    size="lg"
-                    variant="plain"
-                    type="text"
-                    name="caption"
-                    onChange={handleChange}
-                    value={caption}
-                  />
-                </Form.Group>
-                {errors.caption?.map((message, idx) => (
-                  <Alert key={idx} severity="error">
-                    {message}
-                  </Alert>
-                ))}
-              </Grid>
-              {post_image && (
-                <>
-                  <Button
-                    className={styles.Button}
-                    type="submit"
-                    color="secondary"
-                    variant="outlined"
-                  >
-                    {loading ? "uploading..." : "upload post"}
-                  </Button>
-                </>
-              )}
-            </Box>
-          </Grid>
-        </form>
-      </div>
-    </div>
+            {post_image && (
+              <>
+                <Button
+                  className={styles.Button}
+                  type="submit"
+                  color="secondary"
+                  variant="outlined"
+                >
+                  {loading ? "uploading..." : "upload post"}
+                </Button>
+              </>
+            )}
+          </Box>
+        </Grid>
+      </form>
+    </Box>
   );
 };
 

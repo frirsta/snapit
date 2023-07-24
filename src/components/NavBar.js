@@ -100,7 +100,7 @@ const NavBar = () => {
       variant="permanent"
     >
       <DrawerHeader>
-        <div className={styles.Brand}></div>
+        <Box className={styles.Brand}></Box>
       </DrawerHeader>
       <Divider />
       <Box
@@ -200,10 +200,10 @@ const NavBar = () => {
     </Drawer>
   );
   const drawer = (
-    <div>
+    <Box>
       <DrawerHeader className={styles.BrandContainer}>
-        <div className={styles.Brand}></div>
-        <div className={styles.BrandName}>Snapit</div>
+        <Box className={styles.Brand}></Box>
+        <Box className={styles.BrandName}>Snapit</Box>
       </DrawerHeader>
       <Divider />
       <Box className={styles.List}>
@@ -252,7 +252,7 @@ const NavBar = () => {
           </ListItem>
         </List>
       </Box>
-    </div>
+    </Box>
   );
   return (
     <>

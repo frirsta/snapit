@@ -7,19 +7,20 @@ import Form from "react-bootstrap/Form";
 import Alert from "@mui/joy/Alert";
 import Avatar from "@mui/joy/Avatar";
 import Button from "@mui/joy/Button";
+import Box from "@mui/joy/Box";
 
 const EditProfile = () => {
+  const [errors, setErrors] = useState({});
+  const [accountData, setAccountData] = useState({
+    bio: "",
+    profile_image: "",
+  });
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { id } = useParams();
   const navigate = useNavigate();
   const imageFile = useRef();
-  const [errors, setErrors] = useState({});
 
-  const [accountData, setAccountData] = useState({
-    bio: "",
-    profile_image: "",
-  });
   const { bio, profile_image } = accountData;
   useEffect(() => {
     const handleMount = async () => {
@@ -100,7 +101,7 @@ const EditProfile = () => {
     </>
   );
   return (
-    <div>
+    <Box>
       <Form className={styles.Form} onSubmit={handleSubmit}>
         <Form.Group className={styles.ProfileImage}>
           {profile_image && (
@@ -111,14 +112,14 @@ const EditProfile = () => {
               {message}
             </Alert>
           ))}
-          <div>
+          <Box>
             <Form.Label
               className={styles.AddProfileImage}
               htmlFor="profile_image-upload"
             >
               Change profile image
             </Form.Label>
-          </div>
+          </Box>
           <Form.Control
             type="file"
             id="profile_image-upload"
@@ -135,9 +136,9 @@ const EditProfile = () => {
             }}
           />
         </Form.Group>
-        <div>{textField}</div>
+        <Box>{textField}</Box>
       </Form>
-    </div>
+    </Box>
   );
 };
 

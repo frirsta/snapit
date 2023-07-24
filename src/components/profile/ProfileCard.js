@@ -128,24 +128,24 @@ export default function BioCard({ posts }) {
             "& > div": { flex: 1 },
           }}
         >
-          <div className={styles.ProfileInformation}>
+          <Box className={styles.ProfileInformation}>
             <Typography level="body3" fontWeight="lg">
               Posts
             </Typography>
             <Typography fontWeight="lg"> {account?.posts_count}</Typography>
-          </div>
-          <div className={styles.ProfileInformation}>
+          </Box>
+          <Box className={styles.ProfileInformation}>
             <Typography level="body3" fontWeight="lg">
               Followers
             </Typography>
             <Typography fontWeight="lg">{account?.follower_count}</Typography>
-          </div>
-          <div className={styles.ProfileInformation}>
+          </Box>
+          <Box className={styles.ProfileInformation}>
             <Typography level="body3" fontWeight="lg">
               Following
             </Typography>
             <Typography fontWeight="lg"> {account?.following_count}</Typography>
-          </div>
+          </Box>
         </Sheet>
 
         {currentUser && is_owner ? (

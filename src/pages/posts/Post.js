@@ -311,7 +311,7 @@ export default function InstagramPost(props) {
             gap: 0.5,
           }}
         >
-          <div>
+          <Box>
             {is_owner ? (
               <Tooltip title="You cant save your own post">
                 <IconButton variant="plain" color="neutral" size="sm">
@@ -345,7 +345,7 @@ export default function InstagramPost(props) {
                 </Tooltip>
               </>
             )}
-          </div>
+          </Box>
           <Typography level="h6" fontWeight={"500"}>
             {favorite_count}
           </Typography>

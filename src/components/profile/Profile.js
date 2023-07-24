@@ -24,7 +24,7 @@ const Profile = () => {
   };
   console.log(currentUser);
   return (
-    <div>
+    <Box>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Account settings">
           <IconButton
@@ -76,7 +76,7 @@ const Profile = () => {
           Logout
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   );
 };
 

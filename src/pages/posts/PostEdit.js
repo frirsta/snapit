@@ -72,7 +72,7 @@ const PostEdit = () => {
   };
 
   return (
-    <div className={styles.EditPost}>
+    <Box className={styles.EditPost}>
       <h2>Edit Post</h2>
       <form className={styles.Form} onSubmit={handleSubmit}>
         <Form.Group>
@@ -125,7 +125,7 @@ const PostEdit = () => {
           </Button>
         </Box>
       </form>
-    </div>
+    </Box>
   );
 };
 

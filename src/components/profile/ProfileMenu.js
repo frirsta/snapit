@@ -12,6 +12,7 @@ import MoreVert from "@mui/icons-material/MoreVert";
 import Edit from "@mui/icons-material/Edit";
 import styles from "../../styles/ProfileCard.module.css";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Box from "@mui/joy/Box";
 
 export default function ProfileMenu() {
   const { id } = useParams();
@@ -34,7 +35,7 @@ export default function ProfileMenu() {
     setOpen(false);
   };
   return (
-    <div className={styles.Menu}>
+    <Box className={styles.Menu}>
       <IconButton
         ref={buttonRef}
         id="positioned-dropdown-button"
@@ -77,6 +78,6 @@ export default function ProfileMenu() {
           Sign out
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   );
 }

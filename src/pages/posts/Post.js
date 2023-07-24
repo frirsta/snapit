@@ -15,7 +15,6 @@ import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import MoreHoriz from "@mui/icons-material/MoreHoriz";
 import ModeCommentOutlined from "@mui/icons-material/ModeCommentOutlined";
-import SendOutlined from "@mui/icons-material/SendOutlined";
 import BookmarkBorderRoundedIcon from "@mui/icons-material/BookmarkBorderRounded";
 import styles from "../../styles/Post.module.css";
 import Menu from "@mui/joy/Menu";
@@ -283,9 +282,6 @@ export default function InstagramPost(props) {
           <Typography level="h6" fontWeight={"500"}>
             {comments_count}
           </Typography>
-          <IconButton variant="plain" color="neutral" size="sm">
-            <SendOutlined />
-          </IconButton>
         </Box>
         <Box
           sx={{ display: "flex", alignItems: "center", gap: 0.5, mx: "auto" }}

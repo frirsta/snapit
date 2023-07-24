@@ -50,6 +50,22 @@ const SignUp = () => {
     <Box className={styles.SignInContainer}>
       <Box className={`${styles.Background} ${styles.SignUpBackground}`}></Box>
       <Box className={styles.SignIn}>
+        <Box>
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert
+              sx={{
+                padding: "2px",
+                maxWidth: "80vw",
+                position: "absolute",
+                top: 50,
+              }}
+              key={idx}
+              severity="error"
+            >
+              {message}
+            </Alert>
+          ))}
+        </Box>
         <h2 className={styles.Title}>
           Welcome to Snap it <br></br>
           Sign up to continue

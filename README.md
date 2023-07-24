@@ -1,6 +1,12 @@
 # Snapit - Social Media Platform
 
-Welcome to Snapit! This is a social media platform built using React.js and several other libraries, allowing users to connect with others, share posts, and interact with the community. 
+Welcome to Snapit! This is a social media platform built using React.js and several other libraries, allowing users to connect with others, share posts, and interact with the community.
+
+Backend Live website - [Django rest framework](https://snapitapi-a9c9b5ffecd8.herokuapp.com/)
+[GitHub repository](https://github.com/frirsta/snapitapi)
+
+Live website - [Snapit](https://snapit-21abcde7984c.herokuapp.com/)
+[GitHub repository](https://github.com/frirsta/snapit)
 
 # Table of Contents
 
@@ -8,7 +14,6 @@ Welcome to Snapit! This is a social media platform built using React.js and seve
 - [**Technologies Used**](#technologies-used)
 - [**Getting started**](#Getting-started)
 - [**Sources**](#Sources)
-
 
 # Features
 
@@ -30,9 +35,9 @@ Welcome to Snapit! This is a social media platform built using React.js and seve
 
 9. Profile Page: Each user has a dedicated profile page that showcases their profile image, bio, and various statistics:
 
-* Total number of followers
-* Total number of users they are following
-* Total number of posts added by the user
+- Total number of followers
+- Total number of users they are following
+- Total number of posts added by the user
 
 10. My Posts: Users can access a section on their profile page to find all the posts they have created.
 
@@ -42,21 +47,17 @@ Welcome to Snapit! This is a social media platform built using React.js and seve
 
 # Technologies Used
 
-* React.js
-* React Router DOM
-* Axios
-* Material-UI (MUI)
-* JWT Decode
-* react-infinite-scroll-component
-* React Bootstrap
-
-
-
+- React.js
+- React Router DOM
+- Axios
+- Material-UI (MUI)
+- JWT Decode
+- react-infinite-scroll-component
+- React Bootstrap
 
 # Sources
+
 <details><summary>Sources</summary>
-
-
 
 https://html-css-js.com/css/generator/box-shadow/
 
@@ -77,4 +78,5 @@ Video av <a href="https://pixabay.com/sv/users/felixmittermeier-4397258/?utm_sou
 
 Images
 <a href="https://www.freepik.com/free-photo/beautiful-tree-middle-field-covered-with-grass-with-tree-line-background_13005861.htm#query=nature&position=2&from_view=search&track=sph">Image by wirestock</a> on Freepik
+
 </details>

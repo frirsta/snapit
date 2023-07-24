@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { useRedirect } from "../../hooks/useRedirect";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { axiosResponse } from "../../axios";
+import styles from "../../styles/Post.module.css";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import AspectRatio from "@mui/joy/AspectRatio";
 import Avatar from "@mui/joy/Avatar";
@@ -16,7 +17,6 @@ import Typography from "@mui/joy/Typography";
 import MoreHoriz from "@mui/icons-material/MoreHoriz";
 import ModeCommentOutlined from "@mui/icons-material/ModeCommentOutlined";
 import BookmarkBorderRoundedIcon from "@mui/icons-material/BookmarkBorderRounded";
-import styles from "../../styles/Post.module.css";
 import Menu from "@mui/joy/Menu";
 import MenuItem from "@mui/joy/MenuItem";
 import ListItemDecorator from "@mui/joy/ListItemDecorator";

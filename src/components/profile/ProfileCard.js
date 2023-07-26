@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useCurrentUser } from "../../context/UserContext";
 import { useSetUserData, useUserData } from "../../context/UserDataContext";
@@ -19,6 +19,7 @@ import Tab from "@mui/joy/Tab";
 import TabPanel from "@mui/joy/TabPanel";
 import SavedPosts from "./SavedPosts";
 import LikedPosts from "./LikedPosts";
+import Followers from "../Followers";
 
 export default function BioCard({ posts }) {
   const { setUserData, handleFollow, handleUnfollow } = useSetUserData();
@@ -27,7 +28,15 @@ export default function BioCard({ posts }) {
   const [account] = profilePage.results;
   const { id } = useParams();
   const is_owner = currentUser?.username === account?.owner;
+  const [open, setOpen] = useState(false);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -141,9 +150,13 @@ export default function BioCard({ posts }) {
             <Typography fontWeight="lg">{account?.follower_count}</Typography>
           </Box>
           <Box className={styles.ProfileInformation}>
-            <Typography level="body3" fontWeight="lg">
-              Following
-            </Typography>
+            <Followers
+              followers={"Following"}
+              handleOpen={handleOpen}
+              handleClose={handleClose}
+              open={open}
+            />
+
             <Typography fontWeight="lg"> {account?.following_count}</Typography>
           </Box>
         </Sheet>

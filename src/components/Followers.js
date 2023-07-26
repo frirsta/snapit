@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
-import Button from "@mui/material/Button";
+import { Link, useParams } from "react-router-dom";
+import { axiosRequest } from "../axios";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
-import { useParams } from "react-router-dom";
-import { axiosRequest } from "../axios";
+import IconButton from "@mui/joy/IconButton";
+import Avatar from "@mui/joy/Avatar";
+import Close from "@mui/icons-material/Close";
+import Paper from "@mui/material/Paper";
+import styles from "../styles/Followers.module.css";
 
 const Followers = ({ handleOpen, handleClose, open, followers }) => {
   const { id } = useParams();
-  const [following, setFollowing] = useState([]);
+  const [following, setFollowing] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axiosRequest.get(
-          `/profile/?owner__following__follower__profile=&owner__follower__owner__profile=${id}`
+          `/profiles/?owner__following__follower__profile=&owner__follower__owner__profile=${id}`
         );
         setFollowing(data);
       } catch (err) {
@@ -27,7 +29,6 @@ const Followers = ({ handleOpen, handleClose, open, followers }) => {
     };
     fetchData();
   }, [id]);
-  console.log(following);
   return (
     <div>
       <Box variant="plain" onClick={handleOpen}>
@@ -41,21 +42,27 @@ const Followers = ({ handleOpen, handleClose, open, followers }) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
-          </Button>
+          <IconButton color="neutral" variant="plain" onClick={handleClose}>
+            <Close />
+          </IconButton>
         </DialogActions>
+        <DialogContent sx={{ width: "70vw", maxWidth: "400px" }}>
+          <Paper>
+            {following?.results?.map((item) => (
+              <Box sx={{ padding: "10px" }} key={item.id}>
+                <Link className={styles.Link} to={`/profile/${item.id}`}>
+                  <Avatar src={item.profile_image} />{" "}
+                  <Typography
+                    sx={{ padding: "0 10px", textTransform: "capitalize" }}
+                  >
+                    {item.owner}
+                  </Typography>
+                </Link>
+              </Box>
+            ))}
+          </Paper>
+        </DialogContent>
       </Dialog>
     </div>
   );

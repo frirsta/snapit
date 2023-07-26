@@ -155,6 +155,7 @@ export default function BioCard({ posts }) {
               handleOpen={handleOpen}
               handleClose={handleClose}
               open={open}
+              account={account}
             />
 
             <Typography fontWeight="lg"> {account?.following_count}</Typography>

@@ -10,6 +10,7 @@ import Comment from "../../components/comments/Comment";
 import AddComment from "../../components/comments/AddComment";
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
+import { CircularProgress } from "@mui/joy";
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -44,7 +45,7 @@ const PostDetail = () => {
           comments.results.length ? (
             <InfiniteScroll
               dataLength={comments.results.length}
-              loader={<>SPINNER</>}
+              loader={<CircularProgress color="secondary" />}
               hasMore={!!comments.next}
               next={() => fetchMoreData(comments, setComments)}
               children={comments.results.map((comment) => (

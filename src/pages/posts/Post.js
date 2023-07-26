@@ -225,7 +225,7 @@ export default function InstagramPost(props) {
       <CardOverflow>
         <AspectRatio ratio="4/4">
           <RouterLink to={`/post/${id}`}>
-            <img src={post_image} alt="" loading="lazy" />
+            <img src={post_image} alt={caption} loading="lazy" />
           </RouterLink>
         </AspectRatio>
       </CardOverflow>

@@ -20,7 +20,7 @@ const Followers = ({ handleOpen, handleClose, open, followers }) => {
     const fetchData = async () => {
       try {
         const { data } = await axiosRequest.get(
-          `/profiles/?owner__following__follower__profile=&owner__follower__owner__profile=${id}`
+          `/profiles/profiles/?owner__following__follower__profile=&owner__follower__owner__profile=${id}`
         );
         setFollowing(data);
       } catch (err) {

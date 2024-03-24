@@ -40,7 +40,7 @@ export default function BioCard({ posts }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axiosRequest.get(`/profile/${id}`);
+        const { data } = await axiosRequest.get(`/profiles/profile/${id}`);
         setUserData((prevState) => ({
           ...prevState,
           profilePage: { results: [data] },

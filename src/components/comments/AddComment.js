@@ -17,7 +17,7 @@ const AddComment = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axiosResponse.post("/comments/", {
+      const { data } = await axiosResponse.post("/comments/comments/", {
         content,
         post,
       });

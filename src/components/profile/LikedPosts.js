@@ -18,7 +18,7 @@ const LikedPosts = () => {
     const fetchLikedPosts = async () => {
       try {
         const { data } = await axiosRequest.get(
-          `/posts/?owner__profile=&likes__owner__profile=${id}`
+          `/posts/posts/?owner__profile=&likes__owner__profile=${id}`
         );
         setLikedPosts(data);
         setHasLoaded(true);

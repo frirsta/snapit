@@ -61,7 +61,7 @@ const PostList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosRequest.get(`/posts/?search=${query}`);
+        const { data } = await axiosRequest.get(`/posts/posts/?search=${query}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {

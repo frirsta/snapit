@@ -17,7 +17,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axiosRequest.get(`/posts/?owner__profile=${id}`);
+        const { data } = await axiosRequest.get(`/posts/posts/?owner__profile=${id}`);
         setAccountsPosts(data);
         setHasLoaded(true);
       } catch (err) {

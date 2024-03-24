@@ -19,7 +19,7 @@ export const UserDataProvider = ({ children }) => {
 
   const handleFollow = async (account) => {
     try {
-      const { data } = await axiosResponse.post("/followers/", {
+      const { data } = await axiosResponse.post("/followers/followers/", {
         follower: account.id,
       });
       setUserData((prevState) => ({
@@ -43,7 +43,7 @@ export const UserDataProvider = ({ children }) => {
 
   const handleUnfollow = async (account) => {
     try {
-      await axiosResponse.delete(`followers/${account.following_id}`);
+      await axiosResponse.delete(`followers/followers/${account.following_id}`);
 
       setUserData((prevState) => ({
         ...prevState,
@@ -68,7 +68,7 @@ export const UserDataProvider = ({ children }) => {
     const handleData = async () => {
       try {
         const { data } = await axiosRequest.get(
-          "/followers/?ordering=-follower_count"
+          "followers/followers/?ordering=-follower_count"
         );
         setUserData((prevState) => ({
           ...prevState,

@@ -59,7 +59,7 @@ export default function InstagramPost(props) {
 
   const handleDelete = async () => {
     try {
-      await axiosResponse.delete(`/posts/${id}`);
+      await axiosResponse.delete(`/posts/posts/${id}`);
       navigate(`/profile/${profile_id}`);
     } catch (err) {
       // console.log(err);

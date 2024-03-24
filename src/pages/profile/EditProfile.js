@@ -26,7 +26,7 @@ const EditProfile = () => {
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
-          const { data } = await axiosRequest.get(`/profile/${id}`);
+          const { data } = await axiosRequest.get(`/profiles/profile/${id}`);
           const { bio, profile_image } = data;
           setAccountData({ bio, profile_image });
         } catch (err) {

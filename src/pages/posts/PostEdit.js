@@ -28,7 +28,7 @@ const PostEdit = () => {
   useEffect(() => {
     const handleData = async () => {
       try {
-        const { data } = await axiosRequest.get(`/posts/${id}`);
+        const { data } = await axiosRequest.get(`/posts/posts/${id}`);
         const { caption, post_image, is_owner } = data;
 
         is_owner ? setData({ caption, post_image }) : navigate(`/`);

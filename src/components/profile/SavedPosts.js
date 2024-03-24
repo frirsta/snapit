@@ -18,7 +18,7 @@ const SavedPosts = () => {
     const fetchSavedPosts = async () => {
       try {
         const { data } = await axiosRequest.get(
-          `/posts/?favorite__owner__profile=${id}`
+          `/posts/posts/?favorite__owner__profile=${id}`
         );
         setSavedPosts(data);
         setHasLoaded(true);

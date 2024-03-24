@@ -23,8 +23,8 @@ const PostDetail = () => {
     const handleMount = async () => {
       try {
         const [{ data: post }, { data: comments }] = await Promise.all([
-          axiosRequest.get(`/posts/${id}`),
-          axiosRequest.get(`/comments/?post=${id}`),
+          axiosRequest.get(`/posts/posts/${id}`),
+          axiosRequest.get(`/posts/comments/?post=${id}`),
         ]);
         setPost({ results: [post] });
         setComments(comments);

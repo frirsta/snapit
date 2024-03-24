@@ -48,7 +48,7 @@ const AddPost = () => {
 
       formData.append("caption", caption);
       formData.append("post_image", imageInput.current.files[0]);
-      const { data } = await axiosRequest.post("/posts/", formData);
+      const { data } = await axiosRequest.post("/posts/posts/", formData);
       navigate(`/post/${data.id}`);
     } catch (err) {
       setErrors(err.response?.data);
